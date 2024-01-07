@@ -24,3 +24,24 @@ VALUES
     (13, 'Slow Cooker', 'Appliances', 49.95, 30, 4.7),
     (14, 'Cutlery Set', 'Kitchen Supplies', 34.50, 40, 4.4),
     (15, 'Cozy Throw Blanket', 'Furnishings', 24.99, 100, 4.2);
+
+#Show list about the item prices.
+SELECT price
+FROM superstore;
+
+#Show a statistic about the item prices.
+SELECT AVG (price)
+FROM superstore;
+
+#Show a statistic about the price for items in the category of "Kitchen Supplies". 
+SELECT (price), 'Kitchen Supplies'
+FROM superstore;
+
+#Show a statistic about the price for items in the category of stock_quantity. Group by price. 
+SELECT SUM (stock_quantity), price
+FROM superstore
+GROUP BY price;
+
+#Use a SELECT STatement to order the items by one category.
+SELECT (category), 'Electornics'
+FROM superstore
